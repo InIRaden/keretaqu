@@ -75,12 +75,13 @@ public class Admin extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Admin");
         setPreferredSize(new java.awt.Dimension(820, 556));
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(0, 188, 212));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel2.setBackground(new java.awt.Color(0, 188, 212));
+        jPanel2.setBackground(new java.awt.Color(253, 221, 214));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Admin"));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
@@ -171,7 +172,7 @@ public class Admin extends javax.swing.JFrame {
                 .addContainerGap(87, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 465, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 466, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -205,7 +206,7 @@ public class Admin extends javax.swing.JFrame {
                 .addContainerGap(60, Short.MAX_VALUE))
         );
 
-        jPanel3.setBackground(new java.awt.Color(0, 188, 212));
+        jPanel3.setBackground(new java.awt.Color(253, 221, 214));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Harga"));
 
         tableharga.setModel(new javax.swing.table.DefaultTableModel(

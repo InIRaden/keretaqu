@@ -64,11 +64,12 @@ public class Penumpang extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Data Penumpang");
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(0, 188, 212));
+        jPanel1.setBackground(new java.awt.Color(253, 221, 214));
 
-        jPanel2.setBackground(new java.awt.Color(0, 188, 212));
+        jPanel2.setBackground(new java.awt.Color(253, 221, 214));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Data Penumpang"));
 
         penumpang.setModel(new javax.swing.table.DefaultTableModel(
@@ -102,7 +103,7 @@ public class Penumpang extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel3.setBackground(new java.awt.Color(0, 188, 212));
+        jPanel3.setBackground(new java.awt.Color(253, 221, 214));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Print"));
 
         jButton1.setBackground(new java.awt.Color(100, 239, 100));
@@ -131,7 +132,7 @@ public class Penumpang extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel5.setBackground(new java.awt.Color(0, 188, 212));
+        jPanel5.setBackground(new java.awt.Color(253, 221, 214));
         jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder("Hapus Semua Data"));
 
         Hapus.setBackground(new java.awt.Color(239, 100, 100));
