@@ -110,6 +110,7 @@ public class HomeUser extends javax.swing.JFrame {
         btnsimpan = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        akunMenu = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -488,6 +489,14 @@ public class HomeUser extends javax.swing.JFrame {
 
         jMenu1.setText("Menu");
 
+        akunMenu.setText("Akun");
+        akunMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                akunMenuActionPerformed(evt);
+            }
+        });
+        jMenu1.add(akunMenu);
+
         jMenuItem2.setText("Keluar");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -723,6 +732,12 @@ public class HomeUser extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
+    private void akunMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_akunMenuActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new AkunUser().setVisible(true);
+    }//GEN-LAST:event_akunMenuActionPerformed
+
   
     
     /**
@@ -766,6 +781,7 @@ public class HomeUser extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem akunMenu;
     private javax.swing.JTextField bayangan1;
     private javax.swing.JTextField bayangan2;
     private javax.swing.JTextField bayangan3;
