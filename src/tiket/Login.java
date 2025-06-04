@@ -17,7 +17,6 @@ import javax.swing.JOptionPane;
 public class Login extends javax.swing.JFrame {
 
     Connection con;
-    Statement st;
     
     /**
      * Creates new form Login
@@ -63,8 +62,10 @@ public class Login extends javax.swing.JFrame {
         jLabel2.setText("Password");
 
         username.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        username.setForeground(new java.awt.Color(153, 153, 153));
 
         password.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        password.setForeground(new java.awt.Color(153, 153, 153));
 
         btnlogin.setBackground(new java.awt.Color(100, 239, 100));
         btnlogin.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
@@ -224,7 +225,7 @@ public class Login extends javax.swing.JFrame {
 
                 if (rs.next()) {
                     JOptionPane.showMessageDialog(this, "Login sebagai User berhasil!");
-                    new Home().setVisible(true); // ganti jika punya dashboard user
+                    new HomeUser().setVisible(true); // ganti jika punya dashboard user
                     this.dispose();
                 } else {
                 JOptionPane.showMessageDialog(this, "Username atau Password User salah!");

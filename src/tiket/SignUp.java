@@ -196,7 +196,7 @@ public class SignUp extends javax.swing.JFrame {
 
     private void pswdFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pswdFieldFocusGained
         // TODO add your handling code here:
-        checkBox.setSelected(false);
+        // checkBox.setSelected(false);
         pswdField.setEchoChar('*');
         String password = String.valueOf(pswdField.getPassword());
     

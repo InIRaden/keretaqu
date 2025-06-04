@@ -4,13 +4,8 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/D:/projectNetbeans/keretaqu/src/tiket/Login.java</file>
-            <file>file:/D:/projectNetbeans/keretaqu/src/tiket/Penumpang.java</file>
-            <file>file:/D:/projectNetbeans/keretaqu/src/tiket/Index.java</file>
             <file>file:/D:/projectNetbeans/keretaqu/src/tiket/Home.java</file>
-            <file>file:/D:/projectNetbeans/keretaqu/src/tiket/SignUp.java</file>
-            <file>file:/D:/projectNetbeans/keretaqu/src/tiket/Admin.java</file>
-            <file>file:/D:/projectNetbeans/keretaqu/src/tiket/PilihRole.java</file>
-            <file>file:/D:/projectNetbeans/keretaqu/src/tiket/Koneksi.java</file>
+            <file>file:/D:/projectNetbeans/keretaqu/src/tiket/HomeUser.java</file>
         </group>
     </open-files>
 </project-private>
