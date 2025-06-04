@@ -23,5 +23,9 @@ public class Index {
    public static void oke(){
     new Home().setVisible(true);
     }
+   
+   public static void okegas(){
+       new HomeUser().setVisible(true);
+   }
     
 }

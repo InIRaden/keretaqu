@@ -648,7 +648,7 @@ public class HomeUser extends javax.swing.JFrame {
             st = con.createStatement();
             st.execute(sql);
             this.dispose();
-            Index.oke();
+            Index.okegas();
             
             
             String reportName = "src/report/Tiket.jasper";
