@@ -46,7 +46,7 @@ public class Login extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         btnSignUp = new javax.swing.JToggleButton();
         jLabel6 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        selectRole = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -91,7 +91,7 @@ public class Login extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         jLabel6.setText("Select User");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "User", "Admin" }));
+        selectRole.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "User", "Admin" }));
 
         javax.swing.GroupLayout loginLayout = new javax.swing.GroupLayout(login);
         login.setLayout(loginLayout);
@@ -112,7 +112,7 @@ public class Login extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, loginLayout.createSequentialGroup()
                                 .addComponent(jLabel6)
                                 .addGap(18, 18, 18)
-                                .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(selectRole, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(loginLayout.createSequentialGroup()
                                 .addGroup(loginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(loginLayout.createSequentialGroup()
@@ -147,7 +147,7 @@ public class Login extends javax.swing.JFrame {
                         .addComponent(jLabel6))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(selectRole, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(38, 38, 38)
                 .addComponent(btnlogin)
                 .addGap(90, 90, 90)
@@ -182,24 +182,54 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnloginActionPerformed
+        String selectedRole = selectRole.getSelectedItem().toString();
+        String user = username.getText();
+        String pass = new String(password.getPassword());
 
-        try{
-            String pass = new String(password.getPassword());
-            con = Koneksi.getKoneksi();
-            String sql = "SELECT * FROM admin WHERE username='"+username.getText()+"' And password='"+pass+"'";
-            st = con.createStatement();
-            ResultSet rs = st.executeQuery(sql);
-            if(rs.next()){
-                if(username.getText().equals(rs.getString("username")) && pass.equals(rs.getString("password"))){
-                    new Home().setVisible(true);
-                    dispose();
-                }
-            }else{
-                JOptionPane.showMessageDialog(null, "Gagal Login Oi");
-            }
-        }catch(SQLException ex){
-            JOptionPane.showMessageDialog(this, ex.getMessage());
+        if (user.isEmpty() || pass.isEmpty() || selectedRole.equals("Select")) {
+            JOptionPane.showMessageDialog(this, "Harap isi Username, Password, dan pilih Role!");
+            return;
         }
+
+        try {
+            con = Koneksi.getKoneksi();
+            ResultSet rs;
+
+            if (selectedRole.equals("Admin")) {
+                String sql = "SELECT * FROM admin WHERE username=? AND password=?";
+                java.sql.PreparedStatement pst = con.prepareStatement(sql);
+                pst.setString(1, user);
+                pst.setString(2, pass);
+                rs = pst.executeQuery();
+
+                if (rs.next()) {
+                    JOptionPane.showMessageDialog(this, "Login sebagai Admin berhasil!");
+                    new Home().setVisible(true); // ganti jika punya dashboard admin khusus
+                    this.dispose();
+                }
+                else {
+                    JOptionPane.showMessageDialog(this, "Username atau Password Admin salah!");
+                }
+            }
+            else if (selectedRole.equals("User")) {
+                String sql = "SELECT * FROM user WHERE username=? AND password=?";
+                java.sql.PreparedStatement pst = con.prepareStatement(sql);
+                pst.setString(1, user);
+                pst.setString(2, pass);
+                rs = pst.executeQuery();
+
+                if (rs.next()) {
+                    JOptionPane.showMessageDialog(this, "Login sebagai User berhasil!");
+                    new Home().setVisible(true); // ganti jika punya dashboard user
+                    this.dispose();
+                } else {
+                JOptionPane.showMessageDialog(this, "Username atau Password User salah!");
+            }
+        }
+
+    } catch (SQLException ex) {
+        JOptionPane.showMessageDialog(this, "Terjadi kesalahan: " + ex.getMessage());
+    }
     }//GEN-LAST:event_btnloginActionPerformed
 
     private void btnSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignUpActionPerformed
@@ -244,7 +274,6 @@ public class Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton btnSignUp;
     private javax.swing.JButton btnlogin;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -253,6 +282,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel login;
     private javax.swing.JPasswordField password;
+    private javax.swing.JComboBox<String> selectRole;
     private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
 }
