@@ -188,6 +188,8 @@ public class Login extends javax.swing.JFrame {
 
         if (user.isEmpty() || pass.isEmpty() || selectedRole.equals("Select")) {
             JOptionPane.showMessageDialog(this, "Harap isi Username, Password, dan pilih Role!");
+            username.setText("");
+            password.setText("");
             return;
         }
 
@@ -209,6 +211,8 @@ public class Login extends javax.swing.JFrame {
                 }
                 else {
                     JOptionPane.showMessageDialog(this, "Username atau Password Admin salah!");
+                    username.setText("");
+                    password.setText("");
                 }
             }
             else if (selectedRole.equals("User")) {
@@ -224,6 +228,8 @@ public class Login extends javax.swing.JFrame {
                     this.dispose();
                 } else {
                 JOptionPane.showMessageDialog(this, "Username atau Password User salah!");
+                username.setText("");
+                password.setText("");
             }
         }
 
