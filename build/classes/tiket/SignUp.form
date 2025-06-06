@@ -26,15 +26,15 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Component id="Image" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+              <Component id="jPanel2" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel2" max="32767" attributes="0"/>
-          <Component id="Image" alignment="0" max="32767" attributes="0"/>
+          <Component id="Image" alignment="1" max="32767" attributes="0"/>
+          <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -49,45 +49,43 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="149" max="32767" attributes="0"/>
-                  <Component id="Title" min="-2" pref="133" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="123" max="-2" attributes="0"/>
-              </Group>
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="btnSignUp" min="-2" pref="114" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="checkBox" min="-2" max="-2" attributes="0"/>
-                          <Group type="102" alignment="1" attributes="0">
+                      <Component id="checkBox" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnSignUp" alignment="1" min="-2" pref="135" max="-2" attributes="0"/>
+                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="jLabel1" max="32767" attributes="0"/>
                                   <Component id="jLabel2" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="usnField" max="32767" attributes="0"/>
-                                  <Component id="pswdField" pref="157" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="usnField" min="-2" pref="207" max="-2" attributes="0"/>
+                                  <Component id="pswdField" min="-2" pref="207" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel3" min="-2" pref="161" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="btnLogin" min="-2" pref="114" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="btnLogin" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jLabel3" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="81" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <Component id="Title" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="119" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   <Component id="Title" min="-2" pref="72" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="usnField" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
@@ -97,16 +95,15 @@
                       <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="pswdField" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="checkBox" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-                  <Component id="btnSignUp" min="-2" pref="40" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnLogin" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="btnSignUp" min="-2" pref="45" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
+                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="btnLogin" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -115,10 +112,10 @@
         <Component class="javax.swing.JLabel" name="Title">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="24" style="1"/>
+              <Font name="Segoe UI" size="48" style="1"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="SIGN UP"/>
+            <Property name="text" type="java.lang.String" value="Sign Up"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
@@ -138,18 +135,12 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="usnField">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Username"/>
-          </Properties>
           <Events>
             <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="usnFieldFocusGained"/>
             <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="usnFieldFocusLost"/>
           </Events>
         </Component>
         <Component class="javax.swing.JPasswordField" name="pswdField">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Password"/>
-          </Properties>
           <Events>
             <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="pswdFieldFocusGained"/>
             <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="pswdFieldFocusLost"/>
@@ -157,7 +148,13 @@
         </Component>
         <Component class="javax.swing.JToggleButton" name="btnSignUp">
           <Properties>
-            <Property name="text" type="java.lang.String" value="SIGNUP"/>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="64" green="ef" red="64" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="18" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="SIGN UP"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSignUpActionPerformed"/>
@@ -173,11 +170,20 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI Semilight" size="12" style="0"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Already have an account?"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JToggleButton" name="btnLogin">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="64" green="ef" red="64" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="14" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="LOGIN"/>
           </Properties>
           <Events>
