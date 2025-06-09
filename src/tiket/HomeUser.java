@@ -735,7 +735,7 @@ public class HomeUser extends javax.swing.JFrame {
     private void akunMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_akunMenuActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        new AkunUser().setVisible(true);
+        new AkunUser("").setVisible(true);
     }//GEN-LAST:event_akunMenuActionPerformed
 
   
@@ -756,15 +756,12 @@ public class HomeUser extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(HomeUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(HomeUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(HomeUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(HomeUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        
         //</editor-fold>
         //</editor-fold>
 

@@ -4,6 +4,8 @@
  */
 package tiket;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Arul
@@ -13,10 +15,34 @@ public class AkunUser extends javax.swing.JFrame {
     /**
      * Creates new form AkunUser
      */
-    public AkunUser() {
+    
+    private String usernameAktif;
+    
+    public AkunUser(String usernameLogin) {
         initComponents();
+        this.usernameAktif = usernameLogin;
+        tampilkanDataUser();
     }
 
+    private void tampilkanDataUser() {
+        try (java.sql.Connection conn = Koneksi.getKoneksi()) {
+            String query = "SELECT username, password FROM user WHERE username = ?";
+            java.sql.PreparedStatement ps = conn.prepareStatement(query);
+            ps.setString(1, usernameAktif);
+            java.sql.ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                usnField.setText(rs.getString("username"));
+                pswdField.setText(rs.getString("password"));
+            } else {
+                JOptionPane.showMessageDialog(this, "User tidak ditemukan.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error: " + e.getMessage(), "Exception", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -26,41 +52,42 @@ public class AkunUser extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        nama = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        usnLabel = new javax.swing.JLabel();
+        usnField = new javax.swing.JTextField();
+        pswdLabel = new javax.swing.JLabel();
+        pswdField = new javax.swing.JTextField();
+        btnSimpan = new javax.swing.JToggleButton();
+        btnEdit = new javax.swing.JToggleButton();
+        btnHapus = new javax.swing.JToggleButton();
         home = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        menuBar = new javax.swing.JMenu();
+        homeMenuItem = new javax.swing.JMenuItem();
         exit = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Pengaturan Akun");
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel1.setText("Username");
+        usnLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        usnLabel.setText("Username");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Welcome");
+        pswdLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        pswdLabel.setText("Password");
 
-        nama.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        nama.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        nama.setText("namaUser");
+        btnSimpan.setText("SIMPAN");
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel3.setText("Password");
+        btnEdit.setText("EDIT");
 
-        jMenu1.setText("Menu");
+        btnHapus.setText("HAPUS");
 
-        jMenuItem1.setText("Home");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        menuBar.setText("Menu");
+
+        homeMenuItem.setText("Home");
+        homeMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                homeMenuItemActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        menuBar.add(homeMenuItem);
 
         exit.setText("Keluar");
         exit.addActionListener(new java.awt.event.ActionListener() {
@@ -68,9 +95,9 @@ public class AkunUser extends javax.swing.JFrame {
                 exitActionPerformed(evt);
             }
         });
-        jMenu1.add(exit);
+        menuBar.add(exit);
 
-        home.add(jMenu1);
+        home.add(menuBar);
 
         setJMenuBar(home);
 
@@ -79,32 +106,44 @@ public class AkunUser extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(71, 71, 71)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(115, 115, 115)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(nama, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(usnLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(59, 59, 59)
+                        .addComponent(usnField))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(127, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(pswdLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
+                            .addComponent(btnSimpan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(59, 59, 59)
+                                .addComponent(pswdField))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(39, 39, 39)
+                                .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                                .addComponent(btnHapus, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(91, 91, 91))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
+                .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nama, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(48, 48, 48)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(147, Short.MAX_VALUE))
+                    .addComponent(usnField, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(usnLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(pswdField)
+                    .addComponent(pswdLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSimpan, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnHapus, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(90, Short.MAX_VALUE))
         );
 
         pack();
@@ -115,11 +154,11 @@ public class AkunUser extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_exitActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void homeMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeMenuItemActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
         new HomeUser().setVisible(true);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_homeMenuItemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -149,21 +188,22 @@ public class AkunUser extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new AkunUser().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new AkunUser("").setVisible(true);
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton btnEdit;
+    private javax.swing.JToggleButton btnHapus;
+    private javax.swing.JToggleButton btnSimpan;
     private javax.swing.JMenuItem exit;
     private javax.swing.JMenuBar home;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JLabel nama;
+    private javax.swing.JMenuItem homeMenuItem;
+    private javax.swing.JMenu menuBar;
+    private javax.swing.JTextField pswdField;
+    private javax.swing.JLabel pswdLabel;
+    private javax.swing.JTextField usnField;
+    private javax.swing.JLabel usnLabel;
     // End of variables declaration//GEN-END:variables
 }
