@@ -108,7 +108,7 @@ public class SignUp extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(50, 50, 50)
+                .addGap(74, 74, 74)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(checkBox)
                     .addComponent(btnSignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -153,7 +153,7 @@ public class SignUp extends javax.swing.JFrame {
                 .addGap(50, 50, 50))
         );
 
-        Image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/train.png"))); // NOI18N
+        Image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/signup.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
