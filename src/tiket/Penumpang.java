@@ -60,7 +60,6 @@ public class Penumpang extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Data Penumpang");
-        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(253, 221, 214));
 
