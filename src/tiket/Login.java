@@ -21,8 +21,8 @@ public class Login extends javax.swing.JFrame {
      * Creates new form Login
      */
     public Login() {
-        initComponents();       
-        
+        initComponents();
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/train.png")).getImage());
     }
 
     /**

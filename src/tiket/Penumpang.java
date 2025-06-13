@@ -5,18 +5,12 @@
  */
 package tiket;
 import com.mysql.jdbc.Connection;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.view.JasperViewer;
@@ -36,6 +30,7 @@ public class Penumpang extends javax.swing.JFrame {
      */
     public Penumpang() {
         initComponents();
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/train.png")).getImage());
         Koneksi.getKoneksi();
         data();
     }
@@ -239,7 +234,7 @@ public class Penumpang extends javax.swing.JFrame {
             String reportName = "src/report/penumpang.jasper";
             JasperPrint jPrint = JasperFillManager.fillReport(reportName, null, Koneksi.getKoneksi());
             JasperViewer.viewReport(jPrint, false);
-        }catch(Exception e){
+        }catch(JRException e){
             JOptionPane.showMessageDialog(null,e);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -334,10 +329,8 @@ public class Penumpang extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Penumpang().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new Penumpang().setVisible(true);
         });
     }
 

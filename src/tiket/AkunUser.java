@@ -20,6 +20,7 @@ public class AkunUser extends javax.swing.JFrame {
     
     public AkunUser(String usernameLogin) {
         initComponents();
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/train.png")).getImage());
         this.usernameAktif = usernameLogin;
         tampilkanDataUser();
     }

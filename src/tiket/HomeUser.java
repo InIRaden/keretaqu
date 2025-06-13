@@ -34,6 +34,7 @@ public class HomeUser extends javax.swing.JFrame {
      */
     public HomeUser() {
         initComponents();
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/train.png")).getImage());
         Koneksi.getKoneksi();  
         fnama.requestFocus();
         bayangan1.setVisible(false);

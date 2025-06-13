@@ -27,6 +27,7 @@ public class Admin extends javax.swing.JFrame {
      */
     public Admin() {
         initComponents();
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/train.png")).getImage());
         Koneksi.getKoneksi();
         data();
         data_harga();
